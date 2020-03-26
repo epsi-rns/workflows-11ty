@@ -28,7 +28,8 @@ jobs:
       - run: eleventy --pathprefix="/workflows-11ty/"
       # run: ls -lah _site
       # run: gh-pages --dotfiles --message "Updates" --dist _site
-      - run: pwd
+      # run: gh-pages --dotfiles --message "$(git log master -1 --pretty=%B)" --dist _site
+      # run: pwd
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
