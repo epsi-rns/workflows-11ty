@@ -1,0 +1,28 @@
+name: Eleventy Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: mkdir -p ~/.ssh/
+      - run: echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
+      - run: chmod 600 ~/.ssh/id_rsa
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run: git config --global user.name "someone"
+      - run: git config --global user.email "someone@somewhere"
+      - run: git remote -v
+      - run: npm install
+      - run: npm install -g @11ty/eleventy
+      - run: eleventy --pathprefix="/workflows-11ty/"
+      - run: npm install -g gh-pages@2.0.1
+      - run: gh-pages --dotfiles --message "$(git log master -1 --pretty=%B)" --dist _site
