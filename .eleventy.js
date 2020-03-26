@@ -2,7 +2,7 @@
 // to avoid distraction from complex configuration
 const config = {
   // URL Related
-    pathPrefix: "/",
+    pathPrefix: "/workflows-11ty/",
 
   // Templating Engine
   templateFormats: [
