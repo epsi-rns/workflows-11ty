@@ -19,11 +19,15 @@ jobs:
       - run: chmod 600 ~/.ssh/id_rsa
       - run: cat ~/.ssh/id_rsa
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run: git config --global user.name "epsi-rns"
+      - run: git config --global user.name "someone"
       - run: git config --global user.email "someone@somewhere"
       - run: git remote -v
       - run: npm install
       - run: npm install -g @11ty/eleventy
       - run: eleventy --pathprefix="/workflows-11ty/"
+      - run: ls -lah _site
       - run: npm install -g gh-pages@2.0.1
-      - run: gh-pages --dotfiles --message "Updates" --dist _site
+      - run: |
+          git config --global user.name "epsi-rns"
+          git config --global user.email "someone@somewhere"
+          gh-pages --dotfiles --message "Updates" --dist _site
