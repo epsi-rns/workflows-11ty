@@ -93,12 +93,12 @@ And I eat it some more&lt;/p&gt;
     <id>/workflows-11ty/lyrics/disturbed-stupify/</id>
     <content type="html">&lt;p&gt;Look in my face, stare in my soul&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;p&gt;&lt;img alt=&quot;advertisement&quot; src=&quot;/assets/images/adverts/oto-spies-01.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;advertisement&quot; src=&quot;/workflows-11ty/assets/images/adverts/oto-spies-01.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Why, do you like playing around with&lt;br&gt;
 My, narrow scope of reality&lt;br&gt;
 I, can feel it all start slipping&lt;br&gt;
 I think I&#39;m breaking down&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&quot;advertisement&quot; src=&quot;/assets/images/adverts/oto-spies-02.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;advertisement&quot; src=&quot;/workflows-11ty/assets/images/adverts/oto-spies-02.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Look in my face, stare into my soul&lt;br&gt;
 I begin to stupify&lt;/p&gt;
 </content>
@@ -142,13 +142,13 @@ Not need, just feed the war cannibal animal&lt;/p&gt;
 &lt;p&gt;Rally round tha family, pocket full of shells&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/adverts/one-page.png&quot; alt=&quot;Business Card&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/workflows-11ty/assets/images/adverts/one-page.png&quot; alt=&quot;Business Card&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3&gt;Example Dotfiles&lt;/h3&gt;
 &lt;p&gt;ViM RC: &lt;a href=&quot;https://gitlab.com/epsi-rns/dotfiles/tree/master/terminal/vimrc/vimrc.bandithijo&quot;&gt;bandithijo&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3&gt;What&#39;s next ?&lt;/h3&gt;
-&lt;p&gt;Our next song would be &lt;a href=&quot;/lyrics/soulfly-jump-da-fuck-up/&quot;&gt;Soulfly - Jump Da Fuck Up&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Our next song would be &lt;a href=&quot;/workflows-11ty/lyrics/soulfly-jump-da-fuck-up/&quot;&gt;Soulfly - Jump Da Fuck Up&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   
