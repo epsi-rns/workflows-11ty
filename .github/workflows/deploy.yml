@@ -21,12 +21,16 @@ jobs:
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: git config --global user.name "someone"
       - run: git config --global user.email "someone@somewhere"
-      - run: git remote -v
+      # run: git remote -v
       - run: npm install
       - run: npm install -g @11ty/eleventy
+      # run: npm install -g gh-pages@2.0.1
       - run: eleventy --pathprefix="/workflows-11ty/"
-      - run: ls -lah _site
-      - run: npm install -g gh-pages@2.0.1
-      - run: |
-          git status
-          gh-pages --dotfiles --message "Updates" --dist _site
+      # run: ls -lah _site
+      # run: gh-pages --dotfiles --message "Updates" --dist _site
+      - run: pwd
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
