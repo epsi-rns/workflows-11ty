@@ -28,6 +28,5 @@ jobs:
       - run: ls -lah _site
       - run: npm install -g gh-pages@2.0.1
       - run: |
-          git config --global user.name "epsi-rns"
-          git config --global user.email "someone@somewhere"
+          git status
           gh-pages --dotfiles --message "Updates" --dist _site
