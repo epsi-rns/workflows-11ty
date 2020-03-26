@@ -9,16 +9,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm install -g @11ty/eleventy
-      - run: eleventy --pathprefix="/workflows-11ty/"
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+    - name: Checkout to master
+      uses: actions/checkout@v2
+    - name: Set up NodeJS 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - name: Install and Configure Dependencies
+      run: |
+        npm install
+        npm install -g @11ty/eleventy
+    - name: Generate Eleventy Static Files
+      run: |
+        eleventy --pathprefix="/workflows-11ty/"
+    - name: Deploy Static Files to gh-pages Branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
