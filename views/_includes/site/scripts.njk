@@ -1,0 +1,7 @@
+  {# JavaScript at end of body for optimized loading #}
+  <script src="{{ "/assets/js/vue.min.js" | url }}"></script>
+  <script src="{{ "/assets/js/bulma-burger-vue.js" | url }}"></script>
+
+  {% if mathjax %}
+    {% include "site/mathjax.njk" %}
+  {% endif %}

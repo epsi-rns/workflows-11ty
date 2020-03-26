@@ -1,0 +1,47 @@
+
+
+  <div class="post-list">
+  {%- for post in posts  -%}
+    <div class="archive p-b-10">
+    <div class="meta-item p-10 hoverable">
+
+      <strong><a class="meta_link brown-text text-darken-3" 
+        href="{{ post.url | url }}">{{ post.data.title }}
+      </strong></a>
+
+      <div class="meta">
+        <div class="meta_time is-pulled-left">
+          <i class="fa fa-calendar"></i>
+          <time datetime="{{ post.date | date() }}">
+          {{ post.date | date('MMM D, Y') }}</time>
+        </div>      
+        <div class="meta_tags is-pulled-right">
+          {%- for tag in post.data.tags  -%}
+            {%- set tagUrl %}/tags/{{ tag }}/{% endset -%}
+            <a class="tag is-small is-dark brown z-depth-1 hoverable"
+               href="{{ tagUrl | url }}"
+              >{{ tag }}&nbsp;<span class="fa fa-folder"></span>
+            </a>&nbsp;
+          {%- endfor -%}
+        </div>
+      </div> 
+
+      <div class="is-clearfix"></div>
+
+      <div>
+      {% if post.data.excerpt %}
+        {{ post.data.excerpt }}
+      {% else %}
+        {% excerpt post %}
+      {% endif %}
+      </div>
+
+      <div class="read-more is-light">
+        <a href="{{ post.url | url }}" 
+           class="button is-dark is-small brown z-depth-1 hoverable"
+          >Read More&nbsp;</a>
+      </div>
+
+    </div></div>
+  {%- endfor -%}
+  </div>

@@ -1,0 +1,42 @@
+
+  <section class="columns is-multiline p-y-5" id="archive">
+  {% for tag in collections.tagList %}
+  <div class="column is-full-mobile
+              is-half-tablet is-one-third-widescreen">
+    {%- set postsList = collections[ tag ] -%}
+
+    <div class="widget white z-depth-1 hoverable m-b-10">
+      <div class="widget-header {{ color }} lighten-4">
+
+        <div id="{{ tag | slug }}" class ="anchor-target">
+          <span class="fa fa-tag"></span> 
+          &nbsp; {{ tag }}
+        </div>
+
+      </div>
+      <div class="widget-body">
+
+        <div class="archive-list p-y-5">
+        {%- for post in postsList -%}
+          <div class="archive-item meta-item">
+            <div class="meta_link has-text-right">
+              <time class="meta_time is-pulled-right"
+                    datetime="{{ post.date | date() }}">
+                {{ post.date | date('MMM DD, Y') }}&nbsp;
+                &nbsp;<span class="fa fa-calendar"></span></time></div>
+            <div class="is-pulled-left">
+            <a href="{{ post.url | url }}">
+              {{ post.data.title }}
+            </a></div>
+            <div class="is-clearfix"></div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+  {%- endfor -%}
+  </section>
+

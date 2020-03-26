@@ -1,0 +1,9 @@
+---
+layout    : archives
+title     : Archives by Month
+eleventyExcludeFromCollections: true
+---
+
+{% set color = 'cyan' %}
+{% set posts = collections.posts %}
+{% include "index/by-month.njk" %}
